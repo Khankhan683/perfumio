@@ -1,0 +1,359 @@
+@import "tailwindcss";
+
+/* BACKGROUND IMAGE */
+
+.contact-background {
+  background-image: url("/contact-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* PAGE ANIMATION */
+
+.contact-layout {
+  animation: contactPageEnter 1s ease both;
+}
+
+@keyframes contactPageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LEFT SIDE */
+
+.contact-details {
+  max-width: 480px;
+}
+
+.contact-eyebrow {
+  margin-bottom: 15px;
+  color: #f0c875;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.contact-main-heading {
+  color: #fff;
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 4.5vw, 52px);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -1px;
+}
+
+.contact-main-heading span {
+  display: block;
+  margin-top: 6px;
+  color: #e8bd69;
+  font-style: italic;
+}
+
+.contact-gold-line {
+  width: 65px;
+  height: 2px;
+  margin: 18px 0;
+  background: linear-gradient(to right, #f5d58b, transparent);
+}
+
+.contact-description {
+  max-width: 390px;
+  color: #e0d9ce;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+}
+
+/* CONTACT INFORMATION */
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-detail-item {
+  transition: transform 0.3s ease;
+}
+
+.contact-detail-item:hover {
+  transform: translateX(6px);
+}
+
+.contact-detail-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid rgba(245, 200, 117, 0.8);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.25);
+  color: #f5c875;
+  font-size: 19px;
+  transition: all 0.3s ease;
+}
+
+.contact-detail-item:hover .contact-detail-icon {
+  background: #f5c875;
+  color: #111;
+  box-shadow: 0 0 18px rgba(245, 200, 117, 0.35);
+}
+
+/* COMPACT FORM */
+
+.contact-form {
+  width: 100%;
+  max-width: 430px;
+  padding: 22px;
+  border: 1px solid rgba(245, 200, 117, 0.45);
+  border-radius: 16px;
+  background: rgba(80, 79, 79, 0.16);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  animation: formSlideIn 1.1s ease both;
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.6s ease;
+  will-change: transform;
+}
+
+.contact-form:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+}
+
+@keyframes formSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* FORM FIELDS */
+
+.contact-field {
+  margin-bottom: 15px;
+}
+
+.contact-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: #f5d58b;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  font-size: 14px;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-field input:hover,
+.contact-field textarea:hover {
+  border-color: #d9b46b;
+  background: rgba(245, 200, 117, 0.09);
+  box-shadow: 0 0 15px rgba(245, 200, 117, 0.12);
+  transform: translateY(-2px);
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: #f5d58b;
+  background: rgba(245, 200, 117, 0.08);
+  box-shadow:
+    0 0 0 2px rgba(245, 200, 117, 0.08),
+    0 0 20px rgba(245, 200, 117, 0.16);
+  transform: translateY(-2px);
+}
+
+.contact-field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* BUTTON */
+
+.contact-submit-btn {
+  width: 100%;
+  padding: 13px 20px;
+  border-radius: 999px;
+  background: linear-gradient(100deg, #b7791f, #ffe08a, #d69e36);
+  color: #17120a;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.35s ease;
+}
+
+.contact-submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(245, 190, 75, 0.4);
+}
+
+.contact-submit-btn:active {
+  transform: scale(0.98);
+}
+
+.contact-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 640px) {
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-main-heading {
+    font-size: 38px;
+  }
+
+  .contact-details {
+    max-width: 100%;
+  }
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background-color: #000;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.88)),
+    url("/perfumio-bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+    url("/perfumio-bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #000;
+}
+
+@keyframes popupEnter {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* footer */
+
+/* Perfumio Footer Animations */
+
+.footer-gold-glow {
+  animation: footerGoldGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes footerGoldGlow {
+  from {
+    opacity: 0.85;
+    transform: translateX(-90%) scale(0.65);
+  }
+
+  to {
+    opacity: 0.85;
+    transform: translateX(-90%) scale(1.1);
+  }
+}
+
+.footer-fade-up {
+  animation: footerFadeUp 0.8s ease both;
+}
+
+@keyframes footerFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-link {
+  display: inline-block;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ffae00de;
+  transform: translateX(5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-gold-glow {
+    animation: none;
+    background-color: #e0bf06d5;
+    opacity: 0.15;
+  }
+
+  .footer-fade-up {
+    animation: none;
+  }
+
+  .footer-link {
+    transition: none;
+  }
+}
